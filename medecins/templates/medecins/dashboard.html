@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Médecin</title>
+</head>
+<body>
+    <h1>Dashboard Médecin</h1>
+    <ul>
+        <li><a href="{% url 'patient_list' %}">Liste des Patients</a></li>
+        <li><a href="{% url 'appointment_list' %}">Liste des Rendez-vous</a></li>
+        <li><a href="{% url 'create_patient' %}">Créer un Patient</a></li>
+        <li><a href="{% url 'consultation_list' %}">Liste des Consultations</a></li>
+        <!-- Ajouter d'autres liens au besoin -->
+    </ul>
+</body>
+</html>

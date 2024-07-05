@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des Consultations</title>
+</head>
+<body>
+    <h1>Liste des Consultations</h1>
+    <ul>
+        {% for consultation in consultations %}
+        <li>{{ consultation.patient }} avec {{ consultation.medecin }} le {{ consultation.date_heure }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

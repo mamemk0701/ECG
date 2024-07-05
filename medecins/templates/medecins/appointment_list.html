@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des Rendez-vous</title>
+</head>
+<body>
+    <h1>Liste des Rendez-vous</h1>
+    <ul>
+        {% for appointment in appointments %}
+        <li>{{ appointment.patient }} avec {{ appointment.medecin }} le {{ appointment.date_heure }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

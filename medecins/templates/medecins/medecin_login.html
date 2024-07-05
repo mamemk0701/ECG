@@ -1,0 +1,24 @@
+<!-- Template pour la connexion des médecins -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion Médecin</title>
+</head>
+<body>
+    <h1>Connexion Médecin</h1>
+    <!-- Formulaire de connexion pour les médecins -->
+    <form method="post">
+        {% csrf_token %}
+        <!-- Champs de formulaire pour l'identifiant et le mot de passe -->
+        <label for="id_username">Identifiant :</label>
+        <input type="text" id="id_username" name="username" required>
+        <br>
+        <label for="id_password">Mot de passe :</label>
+        <input type="password" id="id_password" name="password" required>
+        <br>
+        <button type="submit">Se connecter</button>
+    </form>
+</body>
+</html>
