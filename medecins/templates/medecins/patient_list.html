@@ -1,16 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
+    <meta charset="UTF-8">
     <title>Liste des Patients</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #fff;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        li:hover {
+            background: #f9f9f9;
+        }
+        .empty-message {
+            color: #888;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
-    <h1>Liste des Patients</h1>
-    <ul>
-        {% for patient in patients %}
+<h1>Liste des Patients</h1>
+<ul>
+    {% for patient in patients %}
         <li>{{ patient.nom }} {{ patient.prenom }} {{ patient.numero_telephone }}</li>
         {% empty %}
-        <li>Aucun patient enregistré.</li>
-        {% endfor %}
-    </ul>
+        <li class="empty-message">Aucun patient enregistré.</li>
+    {% endfor %}
+</ul>
 </body>
 </html>

@@ -1,12 +1,59 @@
-<!-- Template pour la connexion des médecins -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion Médecin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 10px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button[type="submit"] {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
     <h1>Connexion Médecin</h1>
     <!-- Formulaire de connexion pour les médecins -->
     <form method="post">
@@ -14,11 +61,10 @@
         <!-- Champs de formulaire pour l'identifiant et le mot de passe -->
         <label for="id_username">Identifiant :</label>
         <input type="text" id="id_username" name="username" required>
-        <br>
         <label for="id_password">Mot de passe :</label>
         <input type="password" id="id_password" name="password" required>
-        <br>
         <button type="submit">Se connecter</button>
     </form>
+</div>
 </body>
 </html>

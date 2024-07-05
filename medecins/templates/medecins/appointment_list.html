@@ -1,14 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des Rendez-vous</title>
+    <style>
+        body {
+            background-color: #f4f4f9;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        li:hover {
+            background-color: #e9e9e9;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
     <h1>Liste des Rendez-vous</h1>
     <ul>
         {% for appointment in appointments %}
-        <li>{{ appointment.patient }} avec {{ appointment.medecin }} le {{ appointment.date_heure }}</li>
+            <li>{{ appointment.patient }} avec {{ appointment.medecin }} le {{ appointment.date_heure }}</li>
         {% endfor %}
     </ul>
+</div>
 </body>
 </html>
