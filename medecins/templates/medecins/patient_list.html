@@ -32,14 +32,36 @@
             color: #888;
             font-style: italic;
         }
+        .ecg-file {
+            font-size: 0.9em;
+            color: #555;
+        }
+        .ecg-file a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .ecg-file a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
 <h1>Liste des Patients</h1>
 <ul>
     {% for patient in patients %}
-        <li>{{ patient.nom }} {{ patient.prenom }} {{ patient.numero_telephone }}</li>
-        {% empty %}
+        <li>
+            {{ patient.nom }} {{ patient.prenom }} {{ patient.numero_telephone }}
+            <ul>
+                {% for ecg in ecg_files %}
+                    {% if ecg.patient.id == patient.id %}
+                        <li class="ecg-file">
+                            Fichier ECG : <a href="{{ ecg.csv_file.url }}" target="_blank">{{ ecg.csv_file.name }}</a> - Uploaded at: {{ ecg.uploaded_at }}
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </li>
+    {% empty %}
         <li class="empty-message">Aucun patient enregistré.</li>
     {% endfor %}
 </ul>

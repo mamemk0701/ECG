@@ -3,7 +3,7 @@ from django.urls import reverse
 from .forms import AppointmentForm, ConsultationForm
 from patients.forms import PatientForm
 from .models import Medecin, Appointment, Consultation
-from patients.models import Patient
+from patients.models import ECGFile, Patient
 
 
 def medecin_login_view(request):
@@ -27,7 +27,12 @@ def create_patient(request):  # Renommez la vue en fonction du contexte
 
 def patient_list(request):
     patients = Patient.objects.all()
-    return render(request, 'medecins/patient_list.html', {'patients': patients})
+    ecg_files = ECGFile.objects.all()
+    context = {
+        'patients': patients,
+        'ecg_files': ecg_files
+    }
+    return render(request, 'medecins/patient_list.html', context)
 
 def create_appointment(request):
     if request.method == 'POST':
